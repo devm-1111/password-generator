@@ -5,13 +5,24 @@ import string
 DATABASE_FILE = "passwords.json"
 
 
-def generate_password(length):
+def generate_password(length, uppercase, lowercase, numbers, symbols):
 
-    characters = (
-        string.ascii_letters +
-        string.digits +
-        string.punctuation
-    )
+    characters = ""
+
+    if uppercase:
+        characters += string.ascii_uppercase
+
+    if lowercase:
+        characters += string.ascii_lowercase
+
+    if numbers:
+        characters += string.digits
+
+    if symbols:
+        characters += string.punctuation
+
+    if not characters:
+        return None
 
     password = "".join(
         secrets.choice(characters)
@@ -26,6 +37,7 @@ def save_password(password):
     try:
         with open(DATABASE_FILE, "r") as file:
             passwords = json.load(file)
+
     except (FileNotFoundError, json.JSONDecodeError):
         passwords = []
 
