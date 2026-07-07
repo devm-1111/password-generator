@@ -1,6 +1,6 @@
 # Password Generator
 
-A Python tool that generates secure random passwords with customizable character sets and stores them in a JSON file.
+A Python tool that generates secure random passwords with customizable character sets, stores them in a JSON file, and allows you to manage saved passwords through an interactive menu.
 
 ## Features
 
@@ -12,7 +12,10 @@ A Python tool that generates secure random passwords with customizable character
   * Lowercase letters
   * Numbers
   * Symbols
-* Store generated passwords in a JSON file
+* Save generated passwords to a JSON file
+* View saved passwords
+* Clear password history
+* Interactive menu
 * Uses Python's `secrets` module for secure password generation
 * No external dependencies required
 
@@ -37,20 +40,15 @@ Example:
 
 ```text
 ==============================
- Password Generator v1.1
+ Password Generator v1.2
 ==============================
 
-Password length: 12
-Include uppercase letters? (y/n): y
-Include lowercase letters? (y/n): y
-Include numbers? (y/n): y
-Include symbols? (y/n): n
+1. Generate password
+2. View saved passwords
+3. Clear password history
+4. Exit
 
-Generated password:
-
-Pq4LmX9AbT2c
-
-Password saved to passwords.json
+Select an option:
 ```
 
 ## Output
@@ -61,7 +59,9 @@ Example:
 
 ```json
 [
-    "Pq4LmX9AbT2c"
+    "A7#mQ!2xLp@9",
+    "Pq4LmX9AbT2c",
+    "80E&,6GA"
 ]
 ```
 
